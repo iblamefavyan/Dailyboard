@@ -1,0 +1,2 @@
+# Dailyboard
+Dailyboard Sederhana
