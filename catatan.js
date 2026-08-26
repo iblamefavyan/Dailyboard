@@ -1,0 +1,20 @@
+export function tambahCatatan(daftar, isi) {
+    return [
+        ...daftar,
+        {
+            id: Date.now(),
+            isi,
+            tanggal: new Date().toLocaleDateString("id-ID")
+        }
+    ];
+}
+
+export function hapusCatatan(daftar, id) {
+    return daftar.filter(c => c.id !== id);
+}
+
+export function editCatatan(daftar, id, isi) {
+    return daftar.map(c =>
+        c.id === id ? { ...c, isi } : c
+    );
+}

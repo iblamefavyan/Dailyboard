@@ -1,0 +1,30 @@
+export function tambahTugas(data, nama) {
+    return [
+        ...data,
+        {
+            id: Date.now(),
+            nama: nama,
+            selesai: false
+        }
+    ];
+}
+
+export function hapusTugas(data, id) {
+    return data.filter(tugas => tugas.id !== id);
+}
+
+export function editTugas(data, id, nama) {
+    return data.map(tugas =>
+        tugas.id === id
+            ? { ...tugas, nama: nama }
+            : tugas
+    );
+}
+
+export function toggleSelesai(data, id) {
+    return data.map(tugas =>
+        tugas.id === id
+            ? { ...tugas, selesai: !tugas.selesai }
+            : tugas
+    );
+}
